@@ -6,14 +6,14 @@ require_once("lib/api.php");
 
 
 	//SET configuration URL
-	$config['api_url']= API_URL;
-	$config['api_key']= API_KEY;
-	if($config["api_key"]=="" || $config["api_key"]=="COPY_YOUR_API_KEY_HERE"){
+	$config['7503bab3271a4aa8db25f26a4ce490b9']= API_URL;
+	$config['7503bab3271a4aa8db25f26a4ce490b9']= API_KEY;
+	if($config["api_key"]=="" || $config["api_key"]=="7503bab3271a4aa8db25f26a4ce490b9"){
 		die("Please paste your API KEY in config.php which is located under library folder.");
 	}
 	$communityObj = new model($config); //Create class object of library file
 	
-	$address = '4529 Winona Court, Denver, CO, United States 80212';
+	$address = ', Suffern, NY, United States 10901';
 	$areaType = 'ZI';
 	$addressPosted = isset($_REQUEST['address'])?urlencode($_REQUEST['address']):urlencode($address);
 	$areaType = isset($_REQUEST['geoType'])?$_REQUEST['geoType']:$areaType;
@@ -43,8 +43,8 @@ require_once("lib/api.php");
 			
 		if(!isset($subjectProperty['property'][0]['location']['latitude'])){
 			//SET LAT LONG AS PER IP ADDRESS
-			$sourceLocationLatitude = '40.330837';
-			$sourceLocationLongitude = '-79.960191';
+			$sourceLocationLatitude = '41.1148';
+			$sourceLocationLongitude = '74.1496';
 		}else{
 			@$sourceLocationLatitude = $subjectProperty['property'][0]['location']['latitude'];
 			@$sourceLocationLongitude = $subjectProperty['property'][0]['location']['longitude'];
